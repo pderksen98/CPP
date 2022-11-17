@@ -1,0 +1,23 @@
+NAME = phonebook
+SRC = phonebook.cpp contact.cpp
+CC = c++
+FLAGS = -Wall -Werror -Wextra
+OBJ = $(SRC:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.c
+	$(CC) $(FLAGS) -c $^ -o $@
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: clean fclean re all
