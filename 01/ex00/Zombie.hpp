@@ -6,7 +6,7 @@
 /*   By: pieterderksen <pieterderksen@student.co      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/28 17:39:29 by pieterderks   #+#    #+#                 */
-/*   Updated: 2022/11/28 18:43:56 by pieterderks   ########   odam.nl         */
+/*   Updated: 2022/11/30 12:05:54 by pderksen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 // 
 # define GREEN "\033[1;92m"
 # define RED "\033[0;31m"
+# define YELLOW "\033[0;33m"
 # define PLAIN "\033[0m"
 
 class Zombie
