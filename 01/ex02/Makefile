@@ -1,8 +1,13 @@
 NAME = HI_THIS_IS_BRAIN
-CC = c++
-FLAGS = -Wall -Werror -Wextra -std=c++98
-
 SRC = main.cpp
+
+ifdef DEBUG
+	CC=clang++
+	FLAGS = -Wall -Werror -Wextra -fsanitize=address -DDEBUG=1 -g -std=c++98
+else
+	CC=c++
+	FLAGS = -Wall -Werror -Wextra
+endif
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -21,5 +26,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
 .PHONY = re fclean clean all

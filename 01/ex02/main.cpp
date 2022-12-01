@@ -6,7 +6,7 @@
 /*   By: pderksen <pderksen@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/30 13:42:46 by pderksen      #+#    #+#                 */
-/*   Updated: 2022/11/30 15:43:02 by pderksen      ########   odam.nl         */
+/*   Updated: 2022/12/01 11:58:14 by pderksen      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	main(void)
 
 	std::cout << "string value: 		       " << YELLOW << string << PLAIN << std::endl;
 	std::cout << "value pointed to by stringPTR: " << YELLOW << *stringPTR << PLAIN << std::endl;
-	std::cout << "value pointer to by stringREF: " << YELLOW << stringREF << PLAIN << std::endl;
+	std::cout << "value pointed to by stringREF: " << YELLOW << stringREF << PLAIN << std::endl;
 	return (0);
 }
