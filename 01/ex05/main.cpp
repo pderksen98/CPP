@@ -1,15 +1,18 @@
 #include "Harl.hpp"
 
-void    Harl::complain(std::string level)
-{
-
-}
-
 int main(void)
 {
-    Harl harl;
+	Harl	harl;
 
-    void(*function)() = Harl::complain(level);
-    harl.complain()
-    return (0);
+	std::cout << YELLOW << "	debug:\n" << PLAIN;
+	harl.complain("DEBUG");
+	std::cout << YELLOW << "	info: \n" << PLAIN;
+	harl.complain("INFO");
+	std::cout << YELLOW << "	warning:\n" << PLAIN;
+	harl.complain("WARNING");
+	std::cout << YELLOW << "	error:\n" << PLAIN;
+	harl.complain("ERROR");
+	std::cout << YELLOW << "	hello:\n" << PLAIN;
+	harl.complain("HELLO");
+	return (0);
 }

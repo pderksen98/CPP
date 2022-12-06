@@ -11,7 +11,8 @@ int main()
         bob.attack();
     }
     {
-        Weapon club = Weapon("crude spiked club");
+        //same as: Weapon club = Weapon("crude spiked club");
+        Weapon club("crude spiked club");
         HumanB jim("Jim");
         jim.setWeapon(club);
         jim.attack();

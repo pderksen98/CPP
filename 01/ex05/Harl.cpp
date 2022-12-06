@@ -1,5 +1,15 @@
 #include "Harl.hpp"
 
+Harl::Harl()
+{
+	std::cout << GREEN << "Constructud Harl" << PLAIN << std::endl;
+}
+
+Harl::~Harl()
+{
+	std::cout << RED << "Destructed Harl" << PLAIN << std::endl;
+}
+
 void    Harl::debug(void)
 {
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
@@ -18,4 +28,22 @@ void    Harl::warning(void)
 void    Harl::error(void)
 {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+
+
+void    Harl::complain(std::string level)
+{
+	typedef void(Harl::*FuncPtr)();
+
+	FuncPtr f[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	for (int i = 0; i < 4; i++)
+	{
+		if (levels[i] == level)
+		{
+			(this->*f[i])();
+			return ;
+		}
+	}
+	std::cout << LESS_RED << "I don't know that word. I only know: 'DEBUG', 'INFO', 'WARNING', 'ERROR'." << PLAIN << std::endl;
 }

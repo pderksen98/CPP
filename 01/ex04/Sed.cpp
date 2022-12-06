@@ -7,14 +7,14 @@ int	CpFile::parse(std::string file_name, std::string s1, std::string s2)
 		std::cerr << RED << "s1 cannot be an empty string\n" << PLAIN;
 		return (EXIT_FAILURE);
 	}
-	_input.open(file_name, std::ios::in); //std::ios::out
+	_input.open(file_name, std::ios::in);
 	if (!_input.is_open())
 	{
 		std::cerr << "No such file: " << RED << file_name << PLAIN << std::endl;
 		return (EXIT_FAILURE);
 	}
 	std::string outfile = file_name + ".replace";
-	_output.open(outfile, std::ios::out); // std::ios::in | std::ios::trunc()
+	_output.open(outfile, std::ios::out);
 	if (!_output.is_open())
 	{
 		std::cerr << "Unable to create file: " << RED << outfile << PLAIN << std::endl;

@@ -7,7 +7,7 @@ Zombie::~Zombie(void)
 
 Zombie::Zombie(void)
 {
-	std::cout << YELLOW << "Constructer called" << PLAIN << std::endl;
+	std::cout << YELLOW << "Constructor" << PLAIN << std::endl;
 }
 
 void	Zombie::announce(void)
