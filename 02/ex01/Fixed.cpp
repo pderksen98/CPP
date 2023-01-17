@@ -7,15 +7,14 @@ Fixed::Fixed() : _fixedPoint(0)
 
 Fixed::Fixed(const Fixed& other)
 {
-	std::cout << YELLOW << "Copy constructor\n" << PLAIN;
-	_fixedPoint = other.getRawBits();
-	// *this = other;
+	std::cout << GREEN << "Copy constructor\n" << PLAIN;
+	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << CYAN << "Copy assigment operator\n" << PLAIN;
-	setRawBits(other.getRawBits());
+	this->_fixedPoint = other._fixedPoint;
 	return (*this);
 }
 
@@ -32,25 +31,26 @@ int	Fixed::getRawBits() const
 
 void	Fixed::setRawBits(int const raw)
 {
-	// std::cout << "setRawBits member function called\n";
 	_fixedPoint = raw;
 }
 
-Fixed::Fixed(const int num)
+//************* ALL ABOVE ARE THE SAME FUNCTIONS FROM EXERCISE 00 ******************//
+
+Fixed::Fixed(const int value)
 {
-	std::cout << "Int constructor called\n";
-	_fixedPoint = (num << _fractBits);
+	std::cout << GREEN << "Int constructor called\n" << PLAIN;
+	this->_fixedPoint = (value << this->_fractBits);
 }
 
-Fixed::Fixed(const float num)
+Fixed::Fixed(const float value)
 {
-	std::cout << "Float constructor called\n";
-	_fixedPoint = (round(num * (1 << _fractBits)));
+	std::cout << GREEN << "Float constructor called\n" << PLAIN;
+	this->_fixedPoint = roundf(value * (1 << this->_fractBits));
 }
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)_fixedPoint / (float)(1 << _fractBits));
+	return ((float)_fixedPoint / (1 << _fractBits));
 }
 
 int	Fixed::toInt(void) const

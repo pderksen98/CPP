@@ -2,26 +2,25 @@
 
 Fixed::Fixed() : _fixedPoint(0)
 {
-	std::cout << GREEN << "Default constructor\n" << PLAIN;
+	std::cout << GREEN << "Default constructor called\n" << PLAIN;
 }
 
 Fixed::Fixed(const Fixed& other)
 {
-	std::cout << YELLOW << "Copy constructor\n" << PLAIN;
-	_fixedPoint = other.getRawBits();
-	// *this = other;
+	std::cout << GREEN << "Copy constructor called\n" << PLAIN;
+	*this = other;
 }
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-	std::cout << CYAN << "Copy assigment operator\n" << PLAIN;
+	std::cout << CYAN << "Copy assigment operator called\n" << PLAIN;
 	setRawBits(other.getRawBits());
 	return (*this);
 }
 
 Fixed::~Fixed()
 {
-	std::cout << RED << "Destructor\n" << PLAIN;
+	std::cout << RED << "Destructor called\n" << PLAIN;
 }
 
 int	Fixed::getRawBits() const
