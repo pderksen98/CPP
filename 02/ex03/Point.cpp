@@ -31,8 +31,10 @@ Point::~Point()
 
 
 
-Fixed   Point::triangleArea(const Point a, const Point b, const Point c)
+void   Point::triangleArea(const Point a, const Point b, const Point c)
 {
-   Fixed result(abs((a._x * (b._y - c._y) + b._x * (c._y - a._y) + c._x * (a._y - b._y)) / 2));
-   return (result);
+   Fixed result = (a._x * (b._y - c._y) + b._x * (c._y - a._y) + c._x * (a._y - b._y)) / 2;
+   std::cout << result.toFloat() << std::endl;
+   // Fixed result(abs((a._x * (b._y - c._y) + b._x * (c._y - a._y) + c._x * (a._y - b._y)) / 2));
+   // return (result);
 }

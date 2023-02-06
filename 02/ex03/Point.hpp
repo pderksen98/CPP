@@ -15,7 +15,7 @@ class Point
 	Point&	operator=(const Point& other);
 	~Point();
 
-	Fixed	triangleArea(const Point a, const Point b, const Point c);
+	static void	triangleArea(const Point a, const Point b, const Point c);
 };
 
 
