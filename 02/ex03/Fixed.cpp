@@ -195,5 +195,4 @@ const Fixed&	Fixed::max(const Fixed& first, const Fixed& second)
 	return (second);
 }
 
-
-
+//************* ALL ABOVE ARE THE SAME FUNCTIONS FROM EXERCISE 02 ******************//
