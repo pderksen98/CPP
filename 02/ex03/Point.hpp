@@ -15,9 +15,10 @@ class Point
 	Point&	operator=(const Point& other);
 	~Point();
 
-	static void	triangleArea(const Point a, const Point b, const Point c);
+	static Fixed	triangleArea(const Point& a, const Point& b, const Point& c);
+	static void		printPoint(const Point& A, const Point& B, const Point& C, const Point& P, bool flag);
 };
-
+	bool    bsp(const Point& A, const Point& B, const Point& C, const Point& P);
 
 
 #endif
