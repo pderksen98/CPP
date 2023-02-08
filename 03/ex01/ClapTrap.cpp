@@ -59,7 +59,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	else if (this->_hitPoints == 0)
 		std::cout << "ClapTrap " << CYAN << this->_name << PLAIN << " has no hit points left to repaire itself\t";
 	else {
-		std::cout << "ClapTrap " << CYAN << this->_name << PLAIN << " repairs itself and gains " << GREEN << amount << PLAIN << " hit points\t";
+		std::cout << "ClapTrap " << CYAN << this->_name << PLAIN << " repairs itself and gains " << GREEN << amount << PLAIN << " hit points ";
 		this->_hitPoints += amount;
 		this->_energyPoints--;
 	}

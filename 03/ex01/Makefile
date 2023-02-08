@@ -1,6 +1,6 @@
-NAME = fixed_point
-SRC = main.cpp Fixed.cpp
-INC = Fixed.hpp
+NAME = ClapTrap
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
+INC = ClapTrap.hpp ScavTrap.hpp
 
 ifdef DEBUG
 	CC=clang++
@@ -19,9 +19,6 @@ $(NAME): $(OBJ)
 
 %.o: %.cpp $(INC)
 	$(CC) $(FLAGS) -c $< -o $@
-
-run: all
-	./$(NAME)
 
 clean:
 	rm -f $(OBJ)
