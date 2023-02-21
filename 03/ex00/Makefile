@@ -1,6 +1,6 @@
 NAME = ClapTrap
 SRC = main.cpp ClapTrap.cpp
-INC = ClapTrap.hpp
+INC = ClapTrap.hpp colors.hpp
 
 ifdef DEBUG
 	CC=clang++

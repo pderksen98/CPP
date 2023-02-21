@@ -1,31 +1,67 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+
+// ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+// {
+// 	std::cout << "Default ScavTrap is " << GREEN << "constructed" << PLAIN << std::endl;
+// 	std::cout << "\nBefore initializeing name =\t\t" << this->_name << std::endl;
+// 	std::cout << "Before initializeing hitPoints =\t" << this->_hitPoints << std::endl;
+// 	std::cout << "Before initializeing energyPoints =\t" << this->_energyPoints << std::endl;
+// 	std::cout << "Before initializeing attackDamage =\t" << this->_attackDamage << std::endl << std::endl; 
+
+// 	this->_name = name;
+// 	this->_hitPoints = 100;
+// 	this->_energyPoints = 50;
+// 	this->_attackDamage = 20;
+
+// 	std::cout << "After initializeing name =\t\t" << this->_name << std::endl;
+// 	std::cout << "After initializeing hitPoints = \t" << this->_hitPoints << std::endl;
+// 	std::cout << "After initializeing energyPoints =\t" << this->_energyPoints << std::endl;
+// 	std::cout << "After initializeing attackDamage =\t" << this->_attackDamage << std::endl << std::endl; 
+// }
+
+
+// ScavTrap::ScavTrap()
+// {
+// 	std::cout << "Default ScavTrap is " << GREEN << "constructed" << PLAIN << std::endl;
+// 	std::cout << "\nBefore initializeing name =\t\t" << this->_name << std::endl;
+// 	std::cout << "Before initializeing hitPoints =\t" << this->_hitPoints << std::endl;
+// 	std::cout << "Before initializeing energyPoints =\t" << this->_energyPoints << std::endl;
+// 	std::cout << "Before initializeing attackDamage =\t" << this->_attackDamage << std::endl << std::endl; 
+
+// 	this->_name = "Default";
+// 	this->_hitPoints = 100;
+// 	this->_energyPoints = 50;
+// 	this->_attackDamage = 20;
+
+// 	std::cout << "After initializeing name =\t\t" << this->_name << std::endl;
+// 	std::cout << "After initializeing hitPoints = \t" << this->_hitPoints << std::endl;
+// 	std::cout << "After initializeing energyPoints =\t" << this->_energyPoints << std::endl;
+// 	std::cout << "After initializeing attackDamage =\t" << this->_attackDamage << std::endl << std::endl; 
+// }
 
 
 int main(void)
 {
-    // ClapTrap    empty;
-    std::string Name = "Piet";
+	// ScavTrap					*piet = new ScavTrap("Piet");
+	// piet->attack("Jantje");
+	// piet->attack("Jantje");
+	// piet->attack("Jantje");
+	// piet->attack("Jantje");
+	// delete						piet;
 
-    ClapTrap    Piet(Name);
-    Piet.attack((std::string)"Alfa");
-    Piet.attack((std::string)"Bravo");
-    Piet.attack((std::string)"Charlie");
-    Piet.attack((std::string)"Delta");
-    Piet.attack((std::string)"Echo");
-    Piet.attack((std::string)"Foxtrot");
-    Piet.attack((std::string)"Golf");
-    Piet.attack((std::string)"Hotel");
-    Piet.attack((std::string)"India");
-    Piet.attack((std::string)"Juliett");
-    Piet.attack((std::string)"Kilo");
+	// ScavTrap					tim("Tim");
+	// tim.attack("koen");
+	// tim.attack("koen");
+	// tim.attack("koen");
+	// tim.attack("koen");
+	// tim.attack("koen");
 
-    ClapTrap    Copy = Piet;
+	// ScavTrap	Empty;
 
-    Piet.beRepaired(4);
-    Piet.takeDamage(11);
-    Piet.takeDamage(3);
+	ScavTrap	Tango("Tango");
+	Tango.guardGate();
 
-    Piet.attack((std::string)"Lima");
-    Copy.beRepaired(7);
-    return (0);
+
+	return (0);
 }

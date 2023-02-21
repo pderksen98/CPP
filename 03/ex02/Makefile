@@ -1,6 +1,6 @@
-NAME = ScavTrap
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
-INC = ClapTrap.hpp ScavTrap.hpp colors.hpp
+NAME = FragTrap
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+INC = ClapTrap.hpp ScavTrap.hpp colors.hpp FragTrap.hpp
 
 ifdef DEBUG
 	CC=clang++
