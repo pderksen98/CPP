@@ -3,16 +3,22 @@
 #include "Animal.hpp"
 
 class Cat : public Animal
-{
-	private:
-
+{	
 	public:
+	// Constructors
 	Cat();
-	Cat(const Cat& other);
-	~Cat();
-	const Cat&	operator=(const Cat& other);
+	Cat(const Cat &other);
 
-	std::string	make_sound() const;
+	// Destructor
+	~Cat();
+
+	// Operators
+	const Cat &operator=(const Cat &other);
+	
+	// Member functions
+	void makeSound() const;
 };
+
+std::ostream &operator<<(std::ostream &out, const Cat &cat);
 
 #endif

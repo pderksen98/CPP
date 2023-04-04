@@ -1,33 +1,41 @@
 #include "Animal.hpp"
 
-Animal::Animal(){
-	std::cout << YELLOW << "Animal" << PLAIN << " constructed" << std::endl;
-	type = "";
+Animal::Animal() : _type("Animal"){
+	std::cout << "Default Animal constructor called" << std::endl;
+}
+
+Animal::Animal(std::string& type) : _type(type){
+	std::cout << "Type Animal constructor called" << std::endl;
 }
 
 Animal::~Animal(){
-	std::cout << YELLOW << "Animal" << PLAIN << " destructed" << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
 Animal::Animal(const Animal& other){
-	std::cout << YELLOW << "Animal" << PLAIN << " copy constructor" << std::endl;
+	std::cout << "Animal copy constructor called" << std::endl;
 	*this = other;
 }
 
 const Animal&	Animal::operator=(const Animal& other){
-	std::cout << YELLOW << "Animal" << PLAIN << " copy asingment operator" << std::endl;
-	this->type = other.type;
+	std::cout << "Animal copy asingment operator called" << std::endl;
+	this->_type = other._type;
 	return (*this);
 }
 
-void	Animal::set_type(std::string Type){
-	type = Type;
+void	Animal::setType(std::string type){
+	_type = type;
 }
 
-std::string	Animal::make_sound(void) const{
-	return ("");
+void	Animal::makeSound(void) const{
+	std::cout << "Random Animal sound" << std::endl;
 }
 
-std::string	Animal::get_type(void) const{
-	return (type);
+std::string	Animal::getType(void) const{
+	return (_type);
+}
+
+std::ostream &operator<<(std::ostream &out, const Animal &animal){
+	out << animal.getType() << std::endl;
+	return (out);
 }

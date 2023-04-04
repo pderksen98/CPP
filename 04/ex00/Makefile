@@ -1,6 +1,6 @@
 NAME = animal
-SRC = main.cpp Animal.cpp Cat.cpp
-INC = Animal.hpp Cat.hpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
+INC = Animal.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp Dog.hpp
 
 ifdef DEBUG
 	CC=clang++
@@ -11,17 +11,20 @@ else
 endif
 
 OBJ = $(SRC:.cpp=.o)
+OBJD = obj/
+OBJP = $(addprefix $(OBJD), $(SRC:.cpp=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJP)
+	$(CC) $(FLAGS) $(OBJP) -o $(NAME)
 
-%.o: %.cpp $(INC)
+$(OBJD)%.o: %.cpp $(INC)
+	mkdir -p $(@D)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJD)
 
 fclean: clean
 	rm -f $(NAME)
