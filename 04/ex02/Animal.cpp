@@ -27,9 +27,9 @@ const Animal&	Animal::operator=(const Animal& other) {
 // 	_type = type;
 // }
 
-void	Animal::makeSound(void) const {
-	std::cout << "Random Animal sound" << std::endl;
-}
+// void	Animal::makeSound(void) const {
+// 	std::cout << "Random Animal sound" << std::endl;
+// }
 
 std::string	Animal::getType(void) const {
 	return (_type);

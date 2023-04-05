@@ -80,9 +80,9 @@ void	leak_check(void)
 
 int main(void)
 {
-	Animal	animal;
-	animal.makeSound();
-	std::cout << std::endl;
+	// Animal	animal;
+	// animal.makeSound();
+	// std::cout << std::endl;
 
 
 	std::cout << std::endl << YELLOW << "--- CHECKS FROM SUBJECT ---" << PLAIN << std::endl;

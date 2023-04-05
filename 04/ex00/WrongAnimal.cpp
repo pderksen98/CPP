@@ -34,8 +34,3 @@ void	WrongAnimal::makeSound(void) const{
 std::string	WrongAnimal::getType(void) const{
 	return (_type);
 }
-
-std::ostream &operator<<(std::ostream &out, const WrongAnimal &wronganimal){
-	out << wronganimal.getType() << std::endl;
-	return (out);
-}

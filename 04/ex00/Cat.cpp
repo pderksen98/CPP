@@ -2,7 +2,6 @@
 
 Cat::Cat() : Animal("Cat") {
 	std::cout << "Cat constructor" << std::endl;
-	this->setType("Cat");
 }
 
 Cat::~Cat(){
@@ -22,10 +21,4 @@ const Cat &Cat::operator=(const Cat &other){
 
 void Cat::makeSound() const {
 	std::cout << "Miaauw" << std::endl;
-}
-
-std::ostream &operator<<(std::ostream &out, const Cat &cat)
-{
-	out << cat.getType() << std::endl;
-	return (out);
 }

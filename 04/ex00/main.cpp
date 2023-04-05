@@ -4,6 +4,11 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
+void	leak_check(void)
+{
+	system("leaks -q animal");
+}
+
 int main(void)
 {
 	const Animal* animal = new Animal();
@@ -40,6 +45,6 @@ int main(void)
 	delete	w_animal;
 	delete	w_cat;
 
-	// system("leaks -q animal");
+	// atexit(leak_check);
 	return (0);
 }

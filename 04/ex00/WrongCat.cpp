@@ -23,8 +23,3 @@ const WrongCat &WrongCat::operator=(const WrongCat &other){
 void WrongCat::makeSound() const {
 	std::cout << "Miaauw" << std::endl;
 }
-
-std::ostream &operator<<(std::ostream &out, const WrongCat &wrongcat){
-	out << wrongcat.getType() << std::endl;
-	return (out);
-}

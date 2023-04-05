@@ -19,6 +19,4 @@ public:
 	std::string getType(void) const;
 };
 
-std::ostream & operator<<(std::ostream &out, const WrongAnimal &wronganimal);
-
 #endif

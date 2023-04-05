@@ -15,20 +15,16 @@ class Animal
 	std::string _type;
 
 	public:
-	// Constructors
 	Animal();
 	Animal(std::string type);
 	Animal(const Animal &other);
-	// Destructor
 	virtual ~Animal();
-	// Operators
 	const Animal &operator=(const Animal &other);
-	// Member functions
+
 	void 			setType(std::string Type);
 	virtual void	makeSound(void) const;
 	std::string 	getType(void) const;
 };
 
-std::ostream & operator<<(std::ostream &out, const Animal &animal);
 
 #endif
