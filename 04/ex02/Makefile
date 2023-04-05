@@ -1,6 +1,6 @@
 NAME = animal
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
-INC = Animal.hpp Cat.hpp Dog.hpp Brain.hpp
+SRC = main.cpp AAnimal.cpp Cat.cpp Dog.cpp Brain.cpp
+INC = AAnimal.hpp Cat.hpp Dog.hpp Brain.hpp
 
 ifdef DEBUG
 	CC=clang++

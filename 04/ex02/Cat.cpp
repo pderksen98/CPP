@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat") {
+Cat::Cat() : AAnimal("Cat") {
 	std::cout << GREEN << "Cat constructor\n" << PLAIN;
 	_brain = new Brain();
 }
@@ -18,7 +18,7 @@ Cat::Cat(const Cat &other) {
 
 const Cat &Cat::operator=(const Cat &other){
 	std::cout << "Cat copy assignment operator\n";
-	Animal::operator=(other);
+	AAnimal::operator=(other);
 	// this->_brain = other._brain; //shallow copy
 	*this->_brain = *other._brain; //deep copy
 	return (*this);

@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
@@ -9,9 +9,9 @@ void	leak_check(void)
 
 // int	main(void)
 // {
-// 	Animal	*animals[10];
+// 	AAnimal	*animals[10];
 // 	// ***************** CONSTRUCTION ***********************
-// 	std::cout << std::endl << YELLOW << "--- CONSTRUCTING ANIMALS ---" << PLAIN << std::endl;
+// 	std::cout << std::endl << YELLOW << "--- CONSTRUCTING AANIMALS ---" << PLAIN << std::endl;
 // 	for (int i = 0; i < 10; i++)
 // 	{
 // 		if (i < 5)
@@ -21,7 +21,7 @@ void	leak_check(void)
 // 	}
 
 // 	// ***************** DESTRUCTION ***********************
-// 	std::cout << std::endl << YELLOW << "--- DECONSTRUCTING ANIMALS ---" << PLAIN << std::endl;
+// 	std::cout << std::endl << YELLOW << "--- DECONSTRUCTING AANIMALS ---" << PLAIN << std::endl;
 // 	for (int i = 0; i < 10; i++)
 // 		delete animals[i];
 		
@@ -80,16 +80,16 @@ void	leak_check(void)
 
 int main(void)
 {
-	// Animal	animal;
+	// AAnimal	animal;
 	// animal.makeSound();
 	// std::cout << std::endl;
 
 
 	std::cout << std::endl << YELLOW << "--- CHECKS FROM SUBJECT ---" << PLAIN << std::endl;
 	std::cout << "- CONSTRUCTING DOG ---" << std::endl;
-	const Animal	*j = new Dog();
+	const AAnimal	*j = new Dog();
 	std::cout << "- CONSTRUCTING CAT ---" << std::endl;
-	const Animal	*i = new Cat();
+	const AAnimal	*i = new Cat();
 	
 	std::cout << "- DECONSTRUCTING DOG ---" << std::endl;
 	delete j;

@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog") {
+Dog::Dog() : AAnimal("Dog") {
 	std::cout << GREEN << "Dog constructor\n" << PLAIN;
 	_brain = new Brain();
 }
@@ -18,7 +18,7 @@ Dog::Dog(const Dog &other){
 
 const Dog &Dog::operator=(const Dog &other){
 	std::cout << "Dog copy assignment operator\n";
-	Animal::operator=(other);
+	AAnimal::operator=(other);
 	// this->_brain = other._brain; //shallow copy
 	*this->_brain = *other._brain; //deep copy
 	return (*this);
