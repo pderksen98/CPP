@@ -8,10 +8,13 @@ class WrongCat : public WrongAnimal
     // Constructors
 	WrongCat();
 	WrongCat(const WrongCat &other);
+
     // Destructor
 	~WrongCat();
+
     // Operators
 	const WrongCat &operator=(const WrongCat &other);
+	
     // Member functions
     void makeSound() const;
 };

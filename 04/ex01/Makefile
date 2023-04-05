@@ -1,0 +1,33 @@
+NAME = animal
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
+INC = Animal.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp Dog.hpp Brain.hpp
+
+ifdef DEBUG
+	CC=clang++
+	FLAGS = -Wall -Werror -Wextra -fsanitize=address -DDEBUG=1 -g -std=c++98
+else
+	CC=c++
+	FLAGS = -Wall -Werror -Wextra
+endif
+
+OBJ = $(SRC:.cpp=.o)
+OBJD = obj/
+OBJP = $(addprefix $(OBJD), $(SRC:.cpp=.o))
+
+all: $(NAME)
+
+$(NAME): $(OBJP)
+	$(CC) $(FLAGS) $(OBJP) -o $(NAME)
+
+$(OBJD)%.o: %.cpp $(INC)
+	mkdir -p $(@D)
+	$(CC) $(FLAGS) -c $< -o $@
+
+clean:
+	rm -rf $(OBJD)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+.PHONY = re fclean clean all

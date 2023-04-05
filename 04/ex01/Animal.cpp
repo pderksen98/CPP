@@ -1,19 +1,19 @@
 #include "Animal.hpp"
 
 Animal::Animal() : _type("Animal"){
-	std::cout << "Default Animal constructor called" << std::endl;
+	std::cout << GREEN << "Default Animal constructor" << PLAIN << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type){
-	std::cout << "Type Animal constructor called" << std::endl;
+	std::cout << GREEN << "Type Animal constructor" << PLAIN << std::endl;
 }
 
 Animal::~Animal(){
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << RED << "Animal destructor" << PLAIN << std::endl;
 }
 
 Animal::Animal(const Animal& other){
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << GREEN << "Animal copy constructor called" << PLAIN << std::endl;
 	*this = other;
 }
 

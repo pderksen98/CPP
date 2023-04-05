@@ -8,6 +8,7 @@
 #define LESS_RED "\033[0;31m"
 #define GREEN "\033[1;92m"
 #define CYAN "\033[1;36m"
+#include "Brain.hpp"
 
 class Animal
 {
@@ -25,8 +26,9 @@ class Animal
 	const Animal &operator=(const Animal &other);
 	// Member functions
 	void 			setType(std::string Type);
-	virtual void	makeSound(void) const;
+	virtual void	makeSound(void) const = 0;
 	std::string 	getType(void) const;
+	virtual Brain*	getBrain(void) const = 0;
 };
 
 std::ostream & operator<<(std::ostream &out, const Animal &animal);

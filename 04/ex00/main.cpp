@@ -14,23 +14,23 @@ int main(void)
 
 	std::cout << std::endl;
 	
-	std::cout << dog->getType() << ": ";
+	std::cout << CYAN << dog->getType() << ": " << PLAIN;
 	dog->makeSound();
-	std::cout << std::endl;
+	// std::cout << std::endl;
 
-	std::cout << cat->getType() << ": ";
+	std::cout << CYAN << cat->getType() << ": " << PLAIN;
 	cat->makeSound();
-	std::cout << std::endl;
+	// std::cout << std::endl;
 
-	std::cout << animal->getType() << ": ";
+	std::cout << CYAN << animal->getType() << ": " << PLAIN;
 	animal->makeSound();
-	std::cout << std::endl;
+	// std::cout << std::endl;
 
-	std::cout << w_animal->getType() << ": ";
+	std::cout << YELLOW << w_animal->getType() << ": " << PLAIN;
 	w_animal->makeSound();
-	std::cout << std::endl;
+	// std::cout << std::endl;
 
-	std::cout << w_cat->getType() << ": ";
+	std::cout << YELLOW << w_cat->getType() << ": " << PLAIN;
 	w_cat->makeSound();
 	std::cout << std::endl;
 
