@@ -95,7 +95,7 @@ int main(void)
 	delete j;
 	std::cout << "- DECONSTRUCTING CAT ---" << std::endl;
 	delete i;
-	std::cout << std::endl << std::endl << std::endl;
+	std::cout << std::endl << std::endl << std::endl; 
 
 	atexit(leak_check);
 	return (0);
