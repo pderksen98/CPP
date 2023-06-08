@@ -67,7 +67,7 @@ std::ostream& operator<<(std::ostream& stream, const Bureaucrat& obj) {
     return (stream);
 }
 
-void    Bureaucrat::signForm(Form& form) const {
+void    Bureaucrat::signForm(AForm& form) const {
     try {
         form.beSigned(*this);
         std::cout << CYAN << this->getName() << PLAIN << " signed " << CYAN << form.getName() << PLAIN << std::endl;

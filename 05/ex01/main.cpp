@@ -50,7 +50,7 @@ int main(void) {
         }
         catch(const std::exception& e)
         {
-            std::cout << std::endl << " --- CATCHING EXCEPTION ---" << std::endl;
+            std::cout << std::endl << RED << " --- CATCHED EXCEPTION ---" << PLAIN << std::endl;
             std::cerr << e.what() << '\n';
         }
     }
@@ -76,9 +76,9 @@ int main(void) {
 
             std::cout << std::endl << " --- DECONSTRUCT ---" << std::endl;
         }
-        catch(const std::exception& e)
+        catch(const std::exception &e)
         {
-            std::cout << std::endl << " --- CATCHING EXCEPTION ---" << std::endl;
+            std::cout << std::endl << RED << " --- CATCHED EXCEPTION ---" << PLAIN << std::endl;
             std::cerr << e.what() << '\n';
         }
     }

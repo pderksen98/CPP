@@ -7,7 +7,7 @@ Form::Form() : _name("defaultForm"), _signed(false), _gradeToSign(150), _gradeTo
 }
 
 Form::~Form() {
-    std::cout << RED << "Form destructor called" << PLAIN << std::endl;
+    std::cout << LESS_RED << "Form destructor called" << PLAIN << std::endl;
 }
 
 Form::Form(const Form &copy) : _name(copy._name), _signed(copy._signed), _gradeToSign(copy._gradeToSign), _gradeToExecute(copy._gradeToExecute) {
@@ -55,11 +55,11 @@ void        Form::beSigned(const Bureaucrat &bureaucrat) {
 }
 
 const char* Form::GradeTooHighException::what() const throw() {
-    return ("Grade to High");
+    return ("Form exception: Grade to High");
 }
 
 const char* Form::GradeTooLowException::what() const throw() {
-    return ("Grade to Low");
+    return ("Form exception: Grade to Low");
 }
 
 std::ostream& operator<<(std::ostream &stream, const Form& obj) {
