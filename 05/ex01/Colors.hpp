@@ -4,3 +4,4 @@
 # define LESS_RED "\033[0;31m"
 # define GREEN "\033[1;92m"
 # define CYAN "\033[1;36m"
+# define UNDERLINE "\033[4m"

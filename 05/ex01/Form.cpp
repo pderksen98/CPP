@@ -47,7 +47,7 @@ int         Form::getGradeToExecute() const {
     return (this->_gradeToExecute);
 }
 
-void        Form::beSigned(const Bureaucrat &bureaucrat) {
+void        Form::beSigned(Bureaucrat const &bureaucrat) {
     if (bureaucrat.getGrade() > this->_gradeToSign) {
         throw Form::GradeTooLowException();
     }
@@ -64,7 +64,7 @@ const char* Form::GradeTooLowException::what() const throw() {
 
 std::ostream& operator<<(std::ostream &stream, const Form& obj) {
     stream << "Form " << CYAN << obj.getName() << PLAIN << " is ";
-    stream << (obj.getSigned() ? "signed" : "not signed");
+    stream << UNDERLINE << (obj.getSigned() ? "signed" : "not signed") << PLAIN;
     stream << " and requires grade " << GREEN << obj.getGradeToSign() << PLAIN << " to be signed and grade ";
     stream << GREEN << obj.getGradeToExecute() << PLAIN << " to be executed" << std::endl;
     return (stream);

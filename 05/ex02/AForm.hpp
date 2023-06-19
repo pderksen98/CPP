@@ -7,8 +7,7 @@
 #include "Bureaucrat.hpp"
 
 class AForm {
-    // private:
-    protected:
+    private:
         const std::string   _name;
         bool                _signed;
         const int           _gradeToSign;
@@ -25,12 +24,30 @@ class AForm {
         int           getGradeToSign() const;
         int           getGradeToExecute() const; 
         void          beSigned(const class Bureaucrat &bureaucrat);
+
+        virtual void  execute(const Bureaucrat &executor) const = 0;
        
         class GradeTooHighException : public std::exception {
             public:
                 virtual const char* what() const throw();
         };
         class GradeTooLowException : public std::exception {
+            public:
+                virtual const char* what() const throw();
+        };
+        class NotSignedException : public std::exception {
+            public:
+                virtual const char* what() const throw();
+        };
+        class GradeTooLowToSignException : public std::exception {
+            public:
+                virtual const char* what() const throw();
+        };
+        class GradeTooLowToExecuteException : public std::exception {
+            public:
+                virtual const char* what() const throw();
+        };
+        class FormAlreadySignedException : public std::exception {
             public:
                 virtual const char* what() const throw();
         };

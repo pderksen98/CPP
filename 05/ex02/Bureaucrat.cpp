@@ -68,12 +68,23 @@ std::ostream& operator<<(std::ostream& stream, const Bureaucrat& obj) {
 }
 
 void    Bureaucrat::signForm(AForm& form) const {
-    try {
+    // try {
         form.beSigned(*this);
         std::cout << CYAN << this->getName() << PLAIN << " signed " << CYAN << form.getName() << PLAIN << std::endl;
-    } catch (std::exception& e) {
-        std::cout << std::endl << RED << " --- CATCHED EXCEPTION (in signForm) ---" << PLAIN << std::endl;
-        std::cout << this->getName() << " cannot sign " << form.getName() << " because ";
-        std::cout << e.what() << std::endl;
-    }
+    // } catch (std::exception& e) {
+    //     std::cout << std::endl << RED << " --- CATCHED EXCEPTION (in signForm) ---" << PLAIN << std::endl;
+    //     std::cout << this->getName() << " cannot sign " << form.getName() << " because ";
+    //     std::cout << e.what() << std::endl;
+    // }
+}
+
+void    Bureaucrat::executeForm(const AForm& form) const {
+    // try {
+        form.execute(*this);
+        std::cout << CYAN << this->getName() << PLAIN << " executed " << CYAN << form.getName() << PLAIN << std::endl;
+    // } catch (std::exception& e) {
+    //     std::cout << std::endl << RED << " --- CATCHED EXCEPTION (in executeForm) ---" << PLAIN << std::endl;
+    //     std::cout << this->getName() << " cannot execute " << form.getName() << " because ";
+    //     std::cout << e.what() << std::endl;
+    // }
 }

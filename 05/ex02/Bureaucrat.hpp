@@ -32,8 +32,8 @@ class Bureaucrat {
                 virtual const char* what() const throw() ;
         } ;
 
-        // void    signForm(class Form& form) const;
-        void    signForm(AForm& form) const;
+        void    signForm(class AForm& form) const;
+        void    executeForm(const class AForm& form) const;
         
 } ;
 
