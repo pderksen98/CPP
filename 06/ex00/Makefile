@@ -1,11 +1,10 @@
-NAME = Conversion
+NAME = convert
 SRC = main.cpp
-INC = 
+INC = Colors.hpp
 
 ifdef DEBUG
 	CC=clang++
-	# FLAGS = -Wall -Werror -Wextra -fsanitize=address -DDEBUG=1 -g -std=c++98
-	FLAGS = -Wall -Werror -Wextra -DDEBUG=1 -g -std=c++98
+	FLAGS = -Wall -Werror -Wextra -fsanitize=address -DDEBUG=1 -g -std=c++98
 else
 	CC=c++
 	FLAGS = -Wall -Werror -Wextra
