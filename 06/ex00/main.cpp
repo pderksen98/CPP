@@ -2,62 +2,69 @@
 #include <string>
 #include "Colors.hpp"
 
+#include "scalar.hpp"
+
+
 int main(int argc, char* argv[]) 
 {
-    if (argc != 2) {
-        std::cout << "Wrong number of arguments: expected 1, got " << argc - 1 << std::endl;
-        return (1);
+    std::string err;
+    char        c;
+    int         i;
+    float       f;
+    double      d;
+
+    if (argc != 2 || !*argv[1]) {
+        std::cerr << RED << "Error: " << PLAIN << "Invalid number of arguments" << std::endl;
+        std::cerr << "usage: ./convert [scalar]" << std::endl;
+        return (EXIT_FAILURE);
     }
-    std::string input(argv[1]);
-    std::string type;
+    std::string str(argv[1]);
+
+    err = readScalar(str, &c, &i, &f, &d);
 
 
-    if (input.length() == 1 && !std::isdigit(input.front())) {
-        type = "char";
-    }
-    else if (input.find('.') != std::string::npos) {
-        if (input.back() == 'f')
-            type = "float";
-        else
-            type = "double";
-    }
-    else {
-        type = "int";
-    }
-    std::cout << GREEN << "TYPE: " << type << PLAIN << std::endl;
-    if (type == "char") {
-        char c = input[0];
-        if (!std::isprint(c))
-            std::cout << "char: Non displayable" << std::endl;
-        else {
-            std::cout << "char: " << c << std::endl;
-            std::cout << "int: " << static_cast<int>(c) << std::endl;
-            std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
-            std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
-        }
-    } else if (type == "int") {
-        int i = std::stoi(input);
-        std::cout << "char: " << static_cast<char>(i) << std::endl;
-        std::cout << "int: " << i << std::endl;
-        std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
-        std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
-    } else if (type == "float") {
-        float f = std::stof(input);
-        std::cout << "char: " << static_cast<char>(f) << std::endl;
-        std::cout << "int: " << static_cast<int>(f) << std::endl;
-        std::cout << "float: " << f << "f" << std::endl;
-        std::cout << "double: " << static_cast<double>(f) << std::endl;
-    } else if (type == "double") {
-        std::cout << "input = " << input << std::endl;
-        double d = std::stod(input);
-        std::cout << "double d = " << d << std::endl;
-        std::cout << "char: " << static_cast<char>(d) << std::endl;
-        std::cout << "int: " << static_cast<int>(d) << std::endl;
-        std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
-        std::cout << "double: " << d << std::endl;
-    }
+    e_scalar    _type = getType(str);
 
 
-
+    std::cout << "Type: ";
+    if (_type == CHAR)
+        std::cout << "char" << std::endl;
+    else if (_type == INT)
+        std::cout << "int" << std::endl;
+    else if (_type == FLOAT)
+        std::cout << "float" << std::endl;
+    else if (_type == DOUBLE)
+        std::cout << "double" << std::endl;
+    else
+        std::cout << "invalid" << std::endl;
     return (0);
+}
+
+std::string readScalar(std::string& input, char* c, int* i, float* f, double* d) 
+{
+    std::string err;
+    e_scalar    _type = getType(input);
+
+    switch (_type) {
+        case CHAR:
+            *c = input.front();
+            *i = static_cast<int>(*c);
+            *f = static_cast<float>(*c);
+            *d = static_cast<double>(*c);
+            break;
+        case INT:
+            try {
+                *i = std::stoi(input);
+            } catch (const std::out_of_range &e) {
+                std::cerr << "overflow: " << input << std::endl;
+                exit (EXIT_FAILURE);
+            } catch (const std::exception& e) {
+                err = e.what();
+            }
+            *c = static_cast<char>(*i);
+            *f = static_cast<float>(*i);
+            *d = static_cast<double>(*i);
+            break;
+        case FLOAT:
+    }
 }

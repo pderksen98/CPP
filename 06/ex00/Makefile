@@ -1,6 +1,6 @@
 NAME = convert
-SRC = main.cpp
-INC = Colors.hpp
+SRC = main.cpp type.cpp
+INC = Colors.hpp scalar.hpp
 
 ifdef DEBUG
 	CC=clang++
