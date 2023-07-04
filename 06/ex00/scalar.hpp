@@ -14,5 +14,4 @@ typedef enum scalar
 
 e_scalar getType(std::string& str);
 
-
 #endif
