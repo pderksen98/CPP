@@ -10,9 +10,8 @@ struct Data {
 
 class Serializer {
 	private:
-		~Serializer();
-	public:
 		Serializer();
+	public:
 		Serializer(Serializer const& src);
 		~Serializer();
 		Serializer& operator=(Serializer const& rhs);

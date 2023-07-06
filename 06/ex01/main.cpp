@@ -20,7 +20,6 @@ Data* Serializer::deserialize(uintptr_t raw) {
 }
 
 int main(void) {
-    Serializer  s;
     Data        data;
     data.str = "Hello World";
     data.x = 42;
@@ -28,8 +27,8 @@ int main(void) {
     uintptr_t   raw;
     Data*       ptr;
 
-    raw = s.serialize(&data);
-    ptr = s.deserialize(raw);
+    raw = Serializer::serialize(&data);
+    ptr = Serializer::deserialize(raw);
 
     std::cout << ptr->str << std::endl;
     std::cout << ptr->x << std::endl;
