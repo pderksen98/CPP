@@ -9,6 +9,8 @@ struct Data {
 } ;
 
 class Serializer {
+	private:
+		~Serializer();
 	public:
 		Serializer();
 		Serializer(Serializer const& src);

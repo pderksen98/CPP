@@ -12,8 +12,9 @@ typedef enum scalar
 } e_scalar;
 
 class scalarConverter {
-    public:
+    private:
         scalarConverter();
+    public:
         scalarConverter(scalarConverter const& src);
         ~scalarConverter();
         scalarConverter& operator=(scalarConverter const& rhs);

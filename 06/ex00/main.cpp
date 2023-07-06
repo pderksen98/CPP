@@ -103,8 +103,10 @@ void	scalarConverter::convert(std::string& input)
 	else
 		std::cout << i << std::endl;
 	//*** Print Float ***
-	std::cout << "float: ";;
-	if (d > std::numeric_limits<float>::max() || d < std::numeric_limits<float>::lowest())
+	std::cout << "float: ";
+	if (d == std::numeric_limits<double>::infinity() || d == -std::numeric_limits<double>::infinity())
+		std::cout << d << "f" << std::endl;
+	else if (d > std::numeric_limits<float>::max() || d < std::numeric_limits<float>::lowest())
 		std::cout << "overflow" << std::endl;
 	else {
 		std::cout << f;
