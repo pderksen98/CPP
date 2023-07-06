@@ -1,6 +1,6 @@
-NAME = serialization
+NAME = Base
 SRC = main.cpp 
-INC = Serializer.hpp
+INC = Base.hpp
 
 ifdef DEBUG
 	CC=clang++

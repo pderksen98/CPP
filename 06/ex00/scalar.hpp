@@ -2,7 +2,6 @@
 #define SCALAR_HPP
 #include <string>
 
-
 typedef enum scalar
 {
     CHAR,
@@ -11,6 +10,15 @@ typedef enum scalar
     DOUBLE,
     INVALID
 } e_scalar;
+
+class scalarConverter {
+    public:
+        scalarConverter();
+        scalarConverter(scalarConverter const& src);
+        ~scalarConverter();
+        scalarConverter& operator=(scalarConverter const& rhs);
+        static void convert(std::string& input);
+} ;
 
 e_scalar getType(std::string& str);
 
