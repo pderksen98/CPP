@@ -1,4 +1,4 @@
-NAME = easy
+NAME = span
 SRC = main.cpp Span.cpp
 INC = Span.hpp
 
