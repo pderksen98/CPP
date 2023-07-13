@@ -33,11 +33,6 @@ int main()
     std::cout << *it << std::endl;
     ++it;
     }
-    std::stack<int> s(mstack);
-	// while (!s.empty()) {
-	// 	std::cout << s.top() << std::endl;
-	// 	s.pop();
-	// }
     std::cout << "====================================" << std::endl;
     std::cout << "CREATING LIST" << std::endl;
     std::list<int> list;

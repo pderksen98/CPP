@@ -3,11 +3,8 @@
 #include <limits>
 #include <vector>
 #include <iostream>
-
-// #include <algorithm>
-
-int	randomInt(void);
-std::vector<int>	getRandomVector(int N);
+#include <algorithm>
+#include <stdexcept>
 
 class Span {
 	private:
@@ -20,10 +17,10 @@ class Span {
 		Span&	operator=(const Span& other);
 		~Span();
 
-		void 			addNumber(int newNumber);
+		void 			addNumber(const int newNumber);
 		unsigned int	shortestSpan();
 		unsigned int	longestSpan();
-		void			addMany(int N);
+		void			addVector(std::vector<int> vec);
 };
 
 #endif
