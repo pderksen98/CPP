@@ -1,13 +1,13 @@
 NAME = btc
-SRC = main.cpp
-INC = BitcoinExchange.hpp
+SRC = main.cpp inputCheck.cpp parseToMap.cpp
+INC = BitcoinExchange.hpp 
 
 ifdef DEBUG
 	CC=clang++
-	FLAGS = -Wall -Werror -Wextra -fsanitize=address -DDEBUG=1 -g -std=c++98
+	FLAGS = -Wall -Werror -Wextra -fsanitize=address -DDEBUG=1 -g -std=c++11
 else
 	CC=c++ 
-	FLAGS = -Wall -Werror -Wextra
+	FLAGS = -Wall -Werror -Wextra -std=c++11 
 endif
 
 OBJ_DIR = object_files
