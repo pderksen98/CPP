@@ -1,5 +1,8 @@
-#include <iostream>
 #include "PmergeMe.hpp"
+
+# define RED "\033[1;31m"
+# define PLAIN "\033[0m" 
+# define GREEN "\033[1;92m"
 
 // int main(int argc, char* argv[]) {
 //     if (argc <= 2) {
@@ -68,74 +71,114 @@
 
 // ****************** MERGE SORT ***********************
 
-void    merge(std::vector<int>& nums, int l, int m, int r) {
-    int i, j, k;
-    int n1 = m - l + 1;
-    int n2 = r - m;
+// void    merge(std::vector<int>& nums, int l, int m, int r) {
+//     int i, j, k;
+//     int n1 = m - l + 1;
+//     int n2 = r - m;
 
-    // create temp arrays
-    std::vector<int>    L(n1), R(n2);
+//     // create temp arrays
+//     std::vector<int>    L(n1), R(n2);
 
-    // copy data to temp arrays L[] and R[]
-    for (i = 0; i < n1; i++)
-        L[i] = nums[l + i];
-    for (j = 0; j < n2; j++)
-        R[j] = nums[m + 1 + j];
+//     // copy data to temp arrays L[] and R[]
+//     for (i = 0; i < n1; i++)
+//         L[i] = nums[l + i];
+//     for (j = 0; j < n2; j++)
+//         R[j] = nums[m + 1 + j];
 
-    // merge the temp arrays L[] and R[]
-    i = 0;
-    j = 0;
-    k = l;
-    while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
-            nums[k] = L[i];
-            i++;
-        } else {
-            nums[k] = R[j];
-            j++;
-        }
-        k++;
-    }
+//     // merge the temp arrays L[] and R[]
+//     i = 0;
+//     j = 0;
+//     k = l;
+//     while (i < n1 && j < n2) {
+//         if (L[i] <= R[j]) {
+//             nums[k] = L[i];
+//             i++;
+//         } else {
+//             nums[k] = R[j];
+//             j++;
+//         }
+//         k++;
+//     }
 
-    // copy the remaining elements of L[], if there are any
-    while (i < n1) {
-        nums[k] = L[i];
-        i++;
-        k++;
-    }
-    //copy the remaining elements of R[], if there are any
-    while (j < n2) {
-        nums[k] = R[j];
-        j++;
-        k++;
-    }
-}
-
-
-void    mergeSort(std::vector<int>& nums, int l, int r) {
-    if (l < r) {
-        // int m = l + ( (r - l) / 2 );
-        int m = (l + r) / 2;
-
-        mergeSort(nums, l, m);
-        mergeSort(nums, m + 1, r);
-
-        merge(nums, l, m, r);
-    }
-}
+//     // copy the remaining elements of L[], if there are any
+//     while (i < n1) {
+//         nums[k] = L[i];
+//         i++;
+//         k++;
+//     }
+//     //copy the remaining elements of R[], if there are any
+//     while (j < n2) {
+//         nums[k] = R[j];
+//         j++;
+//         k++;
+//     }
+// }
 
 
-int main() {
-    std::vector<int> nums = {12, 11, 13, 5, 6};
-    mergeSort(nums, 0, nums.size() - 1);
+// void    mergeSort(std::vector<int>& nums, int l, int r) {
+//     if (l < r) {
+//         // int m = l + ( (r - l) / 2 );
+//         int m = (l + r) / 2;
 
-    for (int num : nums) {
-        std::cout << num << " ";
-    }
-    std::cout << std::endl;
+//         mergeSort(nums, l, m);
+//         mergeSort(nums, m + 1, r);
 
-    return 0;
-}
+//         merge(nums, l, m, r);
+//     }
+// }
+
+
+// int main() {
+//     std::vector<int> nums = {12, 11, 13, 5, 6};
+//     mergeSort(nums, 0, nums.size() - 1);
+
+//     for (int num : nums) {
+//         std::cout << num << " ";
+//     }
+//     std::cout << std::endl;
+
+//     return 0;
+// }
 
 
 // ****************** MERGE SORT ***********************
+
+
+
+
+
+
+
+
+
+int main(int argc, char **argv) 
+{
+    if (argc <= 2) {
+        std::cout << RED << "Error: " << PLAIN << "at least 2 arguments needed" << std::endl;
+        return (1);
+    }
+    try {
+        std::chrono::steady_clock::time_point   start_v, end_v, start_l, end_l;
+        std::chrono::microseconds               total_v, total_l;
+
+        PmergeMe    p;
+        start_v = std::chrono::steady_clock::now();
+        p.sortWithVector(argv);
+        end_v = std::chrono::steady_clock::now();
+        total_v = std::chrono::duration_cast<std::chrono::microseconds>(end_v - start_v);
+        p.printVector();
+        (void)total_l;
+    } catch (std::invalid_argument& e) {
+        std::cerr << RED << "Error: " << PLAIN << e.what() << std::endl;
+        return (1);
+    } catch (std::runtime_error& e) {
+        std::cerr << RED << "Error: " << PLAIN << e.what() << std::endl;
+        return (1);
+    }
+
+
+    // } catch (std::exception& e) {
+    //     std::cerr << RED << "Error: " << PLAIN << e.what() << std::endl;
+    //     return (1);
+    // }
+}
