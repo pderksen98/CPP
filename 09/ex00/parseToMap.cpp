@@ -45,13 +45,13 @@ void parseInput(char* inputFile, const std::map<std::string,float>& bitcoinData)
             if (std::getline(ss, date, '|') && ss >> value) {
                 date.pop_back(); 
                 if (isDateValid(date) && isValueValid(value)) {
-                    std::cout << date << " => " << std::setprecision(0) << value << " = ";
+                    std::cout << date << " => " << value << " = ";
                     std::map<std::string,float>::const_iterator it = bitcoinData.upper_bound(date);
                     if (it != bitcoinData.begin())
                         --it;
                     float   exchangeRate = it->second;
                     float   result = exchangeRate * value;
-                    std::cout << std::fixed << std::setprecision(2) << result << std::endl;
+                    std::cout << result << std::endl;
                 } 
             } else {
                 std::string error_message = "failed to parse line : ";

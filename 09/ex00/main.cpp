@@ -1,10 +1,5 @@
 #include "BitcoinExchange.hpp"
 
-//TE CHECKEN
-// - WAAROM WERKST STD::STRING ZONDER #INCLUDE <STRING> (volgens mij zit het in <iostream>)
-// - MAP INITIALIZER LIST (C++11)
-// - AFRONDING VAN GROTE GETALLEN IN BITCOIN DATA MAP 
-
 int main(int argc, char* argv[]) 
 {
     //Checking argument count
