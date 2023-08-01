@@ -44,6 +44,9 @@ int main(int argc, char **argv)
     } catch (std::runtime_error& e) {
         std::cerr << RED << "Error: " << PLAIN << e.what() << std::endl;
         return (1);
+    } catch (std::exception& e) {
+        std::cerr << RED << "Error: " << PLAIN << e.what() << std::endl;
+        return (1);
     }
     return (0);
 }

@@ -8,7 +8,22 @@
 # define PLAIN "\033[0m" 
 # define GREEN "\033[1;92m"
 
+bool    isInputEmpty(const std::string& input)
+{
+    if (input.empty()) {
+        return true;
+    }
+    size_t start = input.find_first_not_of(" \t");
+    if (start != std::string::npos) {
+        return false;
+    }
+    return true;
+}
+
 int    parseAndMakeCalculation(const std::string& inputString) {
+    if (isInputEmpty(inputString)) {
+        throw std::runtime_error("Input string is empty or contains only spaces/tabs");
+    }
     std::stack<int>     intStack;
     std::istringstream  iss(inputString);
 
@@ -31,8 +46,12 @@ int    parseAndMakeCalculation(const std::string& inputString) {
             int c;
             if (charToAdd == '*')
                 c = a * b;
-            else if (charToAdd == '/')
+            else if (charToAdd == '/') {
+                if (b == 0) {
+                    throw std::runtime_error("Division by 0 is not possible");
+                }
                 c = a / b;
+            }
             else if (charToAdd == '+')
                 c = a + b;
             else if (charToAdd == '-')
@@ -44,7 +63,6 @@ int    parseAndMakeCalculation(const std::string& inputString) {
     }
     return (intStack.top());
 }
-
 
 int main(int argc, char* argv[])
 {
